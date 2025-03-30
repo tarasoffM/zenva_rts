@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcbjpe0x7chwa"
-path="res://.godot/imported/tile_0124.png-8dedc8c09cd4b77418a4b21cdc839b13.ctex"
+path="res://.godot/imported/tile_0124.png-25740e3f27025c9577da8b64ed32ffe1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Characters/tile_0124.png"
-dest_files=["res://.godot/imported/tile_0124.png-8dedc8c09cd4b77418a4b21cdc839b13.ctex"]
+source_file="res://Assets/Sprites/Characters/tile_0124.png"
+dest_files=["res://.godot/imported/tile_0124.png-25740e3f27025c9577da8b64ed32ffe1.ctex"]
 
 [params]
 
