@@ -50,7 +50,7 @@ affect_navigation_mesh = true
 carve_navigation_mesh = true
 
 [node name="Unit_Player" parent="." instance=ExtResource("2_bo1nx")]
-position = Vector2(-258, -51)
+position = Vector2(-89, 27)
 move_speed = 30.0
 
 [node name="Unit_Player2" parent="." instance=ExtResource("2_bo1nx")]
@@ -62,4 +62,4 @@ position = Vector2(-265, 27)
 move_speed = 20.0
 
 [node name="Unit_Enemy" parent="." instance=ExtResource("4_jjvhh")]
-position = Vector2(267, 10)
+position = Vector2(54, 18)
