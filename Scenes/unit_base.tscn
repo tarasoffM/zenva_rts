@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl6wnar1pmexr"]
+[gd_scene load_steps=7 format=3 uid="uid://bl6wnar1pmexr"]
 
 [ext_resource type="Script" uid="uid://jch3fq4y7uwa" path="res://Scripts/unit.gd" id="1_2vsbj"]
 [ext_resource type="Texture2D" uid="uid://icor8sjs5xki" path="res://Assets/Sprites/Characters/tile_0097.png" id="1_yagyl"]
+[ext_resource type="Script" uid="uid://bwxqjegyylxaq" path="res://Scripts/unit_health_bar.gd" id="3_aj46g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vsbj"]
 bg_color = Color(0.158472, 0.158472, 0.158472, 1)
@@ -39,6 +40,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_aj46g")
 value = 50.0
 rounded = true
 show_percentage = false
+script = ExtResource("3_aj46g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yagyl")
