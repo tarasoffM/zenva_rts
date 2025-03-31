@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://c1yecwnwhf7lu"]
+[gd_scene load_steps=8 format=4 uid="uid://c1yecwnwhf7lu"]
 
 [ext_resource type="Script" uid="uid://byjd56676r05s" path="res://Scripts/unit_controller.gd" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://dwnlw8imsggko" path="res://Scripts/game_manager.gd" id="1_21xkr"]
 [ext_resource type="TileSet" uid="uid://b0e1n875cp51n" path="res://Assets/Sprites/Tiles/new_tile_set.tres" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cc0jbyysnsmh5" path="res://Scenes/unit_player.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://byk4aji04bfbw" path="res://Scripts/camera_controller.gd" id="2_kry3j"]
@@ -12,6 +13,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-288, -79, 288, -79, 287, 113, -288, 113)])
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_21xkr")
 
 [node name="UnitController" type="Node2D" parent="."]
 script = ExtResource("1_8gbba")
