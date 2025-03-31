@@ -16,6 +16,13 @@ func _process (delta):
 	
 	rotation = deg_to_rad(r)
 	
+	var dir = unit.global_position.x - unit_pos_last_frame.x
+	
+	if dir > 0:
+		flip_h = false
+	elif dir < 0:
+		flip_h = true
+	
 	unit_pos_last_frame = unit.global_position
 	
 func _damage_flash (health : int):
