@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://c1yecwnwhf7lu"]
+[gd_scene load_steps=11 format=4 uid="uid://c1yecwnwhf7lu"]
 
 [ext_resource type="Script" uid="uid://byjd56676r05s" path="res://Scripts/unit_controller.gd" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://dwnlw8imsggko" path="res://Scripts/game_manager.gd" id="1_21xkr"]
@@ -6,11 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://cc0jbyysnsmh5" path="res://Scenes/unit_player.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://byk4aji04bfbw" path="res://Scripts/camera_controller.gd" id="2_kry3j"]
 [ext_resource type="PackedScene" uid="uid://d1cfb7erlgka5" path="res://Scenes/unit_enemy.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://4e8n8bnbgpaa" path="res://Scripts/end_screen.gd" id="7_6bp64"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jjgbg"]
 vertices = PackedVector2Array(23, 81, 277.047, 103, -278, 103, -23, 81, 167, 33, 121, 33, 277.953, -69, 167, -22, 23, 26, 23, 0, 23, -55, 121, -22, -23, 0, -122, 33, -122, -22, -23, 26, -168, 33, -278, -69, -168, -22, -23, -55)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 1, 0, 5), PackedInt32Array(6, 1, 4, 7), PackedInt32Array(5, 0, 8), PackedInt32Array(9, 10, 11, 5), PackedInt32Array(9, 5, 8, 12), PackedInt32Array(13, 14, 15, 3), PackedInt32Array(13, 3, 2, 16), PackedInt32Array(16, 2, 17, 18), PackedInt32Array(12, 8, 15, 14), PackedInt32Array(19, 12, 14, 17), PackedInt32Array(14, 18, 17), PackedInt32Array(19, 17, 6, 10), PackedInt32Array(10, 6, 7, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-288, -79, 288, -79, 287, 113, -288, 113)])
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_344ge"]
+bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.831373)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ynf5e"]
+font_size = 32
+shadow_size = 5
+shadow_color = Color(0.0622751, 0.300104, 1, 1)
+shadow_offset = Vector2(1, 2.665)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_21xkr")
@@ -67,3 +77,50 @@ move_speed = 20.0
 
 [node name="Unit_Enemy" parent="." instance=ExtResource("4_jjvhh")]
 position = Vector2(54, 18)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="EndScreen" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_344ge")
+script = ExtResource("7_6bp64")
+
+[node name="HeaderText" type="Label" parent="CanvasLayer/EndScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.5
+offset_top = -151.185
+offset_right = 224.5
+offset_bottom = 6.815
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player team has won!"
+label_settings = SubResource("LabelSettings_ynf5e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/EndScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -25.5
+offset_right = 64.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu"
+
+[connection signal="pressed" from="CanvasLayer/EndScreen/MenuButton" to="CanvasLayer/EndScreen" method="_on_menu_button_pressed"]
