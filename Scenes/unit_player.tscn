@@ -19,7 +19,7 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.156863, 0.156863, 0.156863, 1)
 
-[node name="Player_Unit" instance=ExtResource("1_dr6x0")]
+[node name="Unit_Player" groups=["UnitPlayer"] instance=ExtResource("1_dr6x0")]
 
 [node name="PlayerUnit" type="Node" parent="." index="0"]
 script = ExtResource("2_66hmh")
